@@ -1,0 +1,103 @@
+/* app css stylesheet */
+
+body {
+  font-family: initial;
+}
+
+form div.input-field label {
+  font-weight: 900;
+}
+
+.error {
+  color: #F44336;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.success {
+  color: #4caf50;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+ul.pagination {
+  list-style-type: none;
+  display: block;
+}
+
+ul.pagination li {
+  display: inline-block;
+  border-radius: 15px;
+  text-align: center;
+  vertical-align: top;
+  height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pagination li.active {
+  background-color: #000 !important;
+}
+
+.pagination li.active a {
+  color: #fff;
+}
+
+.table-dashboard {
+  width: 1000px;
+  table-layout: fixed;
+  font-family: initial;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.table-dashboard thead {
+  background-color: #000;
+  color: #FFF;
+}
+
+.table-dashboard th,
+.table-dashboard td {
+  text-align: center;
+}
+
+.table-dashboard tfoot {
+  background-color: #F5F5F5;
+}
+
+.table-dashboard tfoot td {
+  padding: 0px;
+}
+
+hr.dashboard {
+  width: 1000px;
+}
+
+.brand {
+  color: #1e88e5;
+  font-size: 60px !important;
+  padding-left: 20px;
+}
+
+.brand-image {
+  height: 50px;
+  border-radius: 35px;
+  width: 50px;
+  margin-top: 5px;
+}
+
+.chip>i {
+  float: left;
+  margin: 0 8px 0 -12px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  line-height: 30px !important;
+  color: #1e88e5;
+}
+
+.home-image {
+  width: 1000px;
+  height: 500px;
+  margin: 50px;
+}

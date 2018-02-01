@@ -1,0 +1,54 @@
+<div class="row">
+    <form [formGroup]="signUpForm" class="col s6 offset-s3 z-depth-3" (ngSubmit)="registerEmployee(signUpForm.value)">
+        <h5 style="font-weight: 900;">SIGN UP</h5>
+        <span *ngIf="userAlreadyExists===true" class="error">
+            <i class="material-icons dp48" style="vertical-align: bottom;">error</i>
+            You already have an account. Pleas login to access.
+        </span>
+        <span *ngIf="registrationSuccess===true" class="success">
+            <i class="material-icons dp48" style="vertical-align: bottom;">done</i>
+            Your have registered successfully. PLease login to access.
+        </span>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="employeeName" (keypress)="alphaKeyPressOnlyEvent($event)" [ngClass]="{'invalid': validEmployeeName===false}" id="employee_name" type="text" class="validate" required>
+                <label for="employee_name" data-error="*Required">Employee Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="employeeNumber" (keypress)="numericKeyPressOnlyEvent($event)" [ngClass]="{'invalid': validEmployeeNumber===false}" id="employee_number" type="text" class="validate" required>
+                <label for="employee_number" data-error="*Required">Employee Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="password" [ngClass]="{'invalid': validPassword===false}" id="password" type="password" required class="validate">
+                <label for="password" data-error="*Required">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="designation" [ngClass]="{'invalid': validDesignation===false}" id="designation" (keypress)="alphaKeyPressOnlyEvent($event)" type="text" class="validate" required>
+                <label for="designation" data-error="*Required">Designation</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="serviceLine" [ngClass]="{'invalid': validServiceLine===false}" id="serviceLine" (keypress)="alphaKeyPressOnlyEvent($event)" type="text" class="validate" required>
+                <label for="serviceLine" data-error="*Required">Service Line</label>
+            </div>
+        </div>
+        <div class="row">
+             <div class="input-field col s12">
+                <input formControlName="role" [ngClass]="{'invalid': validRole===false}" id="role" (keypress)="alphaKeyPressOnlyEvent($event)" type="text" class="validate" required>
+                <label for="role" data-error="*Required">Role</label>
+            </div>
+        </div>
+         <div class="row">
+             <div class="col s4 offset-s4">
+                <button type="submit" class="waves-effect waves-light btn">SIGN UP</button>
+            </div>
+        </div>
+    </form>
+</div>

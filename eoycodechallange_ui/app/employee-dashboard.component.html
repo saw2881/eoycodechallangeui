@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="text-center">
+        <h5 style="font-weight:bold;">DASHBOARD</h5>
+        <hr class="dashboard"/>
+        <h5 style="font-weight:500; font-size: larger; margin-bottom: 25px;">EMPLOYEE INFORMATION</h5>
+        <table class="striped table-dashboard">
+            <thead>
+                <th>SERIAL NO.</th>
+                <th>EMPLOYEE ID</th>
+                <th>EMPLOYEE NAME</th>
+                <th>DESGINATION</th>
+                <th>SERVICE LINE</th>
+                <th>ROLE</th>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="6" style="text-align: right">
+                        <!-- pager -->
+                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a (click)="setPage(1)" style="padding: 0px;"><i class="material-icons dp48">first_page</i></a>
+                            </li>
+                            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a (click)="setPage(pager.currentPage - 1)" style="padding: 0px;"><i class="material-icons dp48">navigate_before</i></a>
+                            </li>
+                            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                <a (click)="setPage(page)">{{page}}</a>
+                            </li>
+                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a (click)="setPage(pager.currentPage + 1)" style="padding: 0px;"><i class="material-icons dp48">navigate_next</i></a>
+                            </li>
+                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a (click)="setPage(pager.totalPages)" style="padding: 0px;"><i class="material-icons dp48">last_page</i></a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr *ngFor="let employee of pagedItems; let i = index">
+                    <td>{{employee.serialNo}}</td>
+                    <td>{{employee.employeeId}}</td>
+                    <td>{{employee.employeeName}}</td>
+                    <td>{{employee.designation}}</td>
+                    <td>{{employee.serviceLine}}</td>
+                    <td>{{employee.role}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

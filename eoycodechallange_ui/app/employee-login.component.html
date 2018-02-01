@@ -1,0 +1,26 @@
+<div class="row">
+    <form [formGroup]="signInForm" class="col s6 offset-s3 z-depth-3" (ngSubmit)="loginEmployee(signInForm.value)">
+        <h5 style="font-weight: 900;">SIGN IN</h5>
+        <span *ngIf="validLogin!=null && !validLogin" class="error">
+            <i class="material-icons dp48" style="vertical-align: bottom;">error</i>
+            Incorrect Employee Number or Password
+        </span>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="employeeNumber" (keypress)="numericKeyPressOnlyEvent($event)" [ngClass]="{'invalid': validEmployeeNumber===false}" id="employee_number" type="text" class="validate" required>
+                <label for="employee_number" data-error="*Required">Employee Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="password" id="password" type="password" class="validate" [ngClass]="{'invalid': validPassword===false}" required>
+                <label for="password" [attr.data-error]="signInForm.controls.password.errors?.required ? '*Required' : signInForm.controls.password.errors?.maxlength ? '*Maxlength' : null">Password</label>
+            </div>
+        </div>
+         <div class="row">
+             <div class="col s4 offset-s4">
+                <button type="submit" class="waves-effect waves-light btn">SIGN IN</button>
+            </div>
+        </div>
+    </form>
+</div>
